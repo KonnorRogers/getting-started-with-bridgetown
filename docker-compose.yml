@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 services:
   web:
@@ -6,10 +6,10 @@ services:
       context: .
       dockerfile: Dockerfile
       args:
-        USER_ID: $USER_ID
-        GROUP_ID: $GROUP_ID
-        APP_DIR: $APP_DIR
-        DOCKER_USER: $DOCKER_USER
+        USER_ID: ${USER_ID:-1000}
+        GROUP_ID: ${GROUP_ID:-1000}
+        DOCKER_USER: ${DOCKER_USER:-user}
+        APP_DIR: ${APP_DIR:-/home/user/bridgetown-app}
 
     command: bash -c "yarn start --host '0.0.0.0'"
 
@@ -20,9 +20,9 @@ services:
       - "4002:4002"
 
     volumes:
-      - .:$APP_DIR
+      - .:${APP_DIR:-/home/user/bridgetown-app}
       # this seperates node_modules from the host
-      - node_modules:$APP_DIR/node_modules
+      - node_modules:${APP_DIR:-/home/user/bridgetown-app}/node_modules
 
 volumes:
   node_modules:
