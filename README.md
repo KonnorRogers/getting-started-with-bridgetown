@@ -8,8 +8,7 @@ project.
 ```bash
 git clone https://github.com/ParamagicDev/getting-started-with-bridgetown.git
 cd getting-started-with-bridgetown
-source ./docker.env
-docker-compose up --build
+./compose.sh up --build
 ```
 
 Navigate to `localhost:4000` in your browser and you should be up and
