@@ -14,5 +14,5 @@ source "https://rubygems.org"
 #
 # Happy Bridgetowning!
 
-gem "bridgetown", "~> 0.14.0"
+gem "bridgetown", "~> 0.15.0.beta3"
 
